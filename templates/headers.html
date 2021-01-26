@@ -1,0 +1,171 @@
+ {% load static %}
+<style>
+    @media screen and (min-width: 600px) {
+        .icon-home {display:none;}
+    }
+
+</style>
+<div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body">
+      </div>
+    </div> <!-- .site-mobile-menu -->
+
+
+
+<div class="site-navbar-wrap">
+      <div class="site-navbar-top">
+        <div class="container py-3">
+          <div class="row align-items-center">
+            <div class="col-6">
+              <a href="https://www.facebook.com/Ramta%C5%9F-Emsan-Korusan-%C5%9Eirketler-Grubu-263252127037975/" class="p-2 pl-0"><span class="icon-facebook"></span></a>
+              <a href="https://www.linkedin.com/company/emsan-korusan-ramta%C5%9F-a-%C5%9F/?viewAsMember=true" class="p-2 pl-0"><span class="icon-linkedin"></span></a>
+              <a href="https://www.instagram.com/emsankorusanramtas/" class="p-2 pl-0"><span class="icon-instagram"></span></a>
+
+            </div>
+            <div class="col-6">
+
+              <div class="d-flex ml-auto">
+                   <a href="{% url 'mainView' %}" class="d-flex align-items-center ml-auto mr-4">
+                  <span class="icon-home"></span>
+
+                </a>
+                <a href="mailto:info@korusan.com.tr" class="d-flex align-items-center ml-auto mr-4">
+                  <span class="icon-envelope mr-2"></span>
+                  <span class="d-none d-md-inline-block">info@korusan.com.tr</span>
+                </a>
+
+                <a href="tel:+90-216-484-2323" class="d-flex align-items-center">
+                  <span class="icon-phone mr-2"></span>
+                  <span class="d-none d-md-inline-block"> 0 (216) 484 23 23</span>
+                </a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="site-navbar site-navbar-target js-sticky-header">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-2">
+              <!--<h1 class="my-0 site-logo"><a href="index.html">Korusan</a></h1>-->
+
+            </div>
+            <div class="col-10">
+              <nav class="site-navigation text-right" role="navigation">
+                <div class="container">
+
+
+                  <ul class="site-menu main-menu js-clone-nav d-none d-lg-block">
+                        <li>
+                                  <a href="{% url 'mainView' %}" class="nav-link">Anasayfa</a>
+                              </li>
+
+                    <li class="has-children">
+                      <a href="#" class="nav-link">Ürünlerimiz</a>
+
+                      <ul class="dropdown arrow-top" style="
+    overflow: auto;
+    width: auto;
+    height: 300px;
+">
+
+                        {% for cat in mainCat %}
+                          {% if cat.altGroup == True %}
+                              <li class="has-children">
+                                  <a href="{% url 'productDetail' slug=cat.slug %}">{{cat.name}}</a>
+                              <ul class="dropdown">
+
+                             {% for cats in altCat %}
+                                 {% if cats.mainProduct.id == cat.id %}
+                                     <li><a href="{% url 'productAltDetail' slug=cats.slug %}">{{cats.name}}</a></li>
+                                 {% endif %}
+                             {% endfor %}
+                             </ul>
+                             </li>
+
+                          {% else %}
+                            <li><a href="{% url 'productDetail' slug=cat.slug %}" class="nav-link">{{cat.name}}</a></li>
+                          {% endif %}
+                      {% endfor %}
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="{% url 'projectView' %}" class="nav-link">Projelerimiz</a>
+                    </li>
+                    <li><a href="{% url 'services' %}" class="nav-link">Hizmetlerimiz</a></li>
+                    <li><a href="{% url 'blogAll' %}" class="nav-link">Blog</a></li>
+                    <li><a href="#contact-section" class="nav-link">Hakkımızda</a></li>
+                    <li><a href="{% url 'allContact' %}" class="nav-link">İletişim</a></li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    <div class="pos-f-t" style="background-color: #ff5633">
+    <div class="collapse" id="navbarToggleExternalContent" style="background-color: #ff5633">
+      <div class="container pt-2">
+          <div class="row align-items-center">
+            <div class="col-6">
+              <a href="https://www.facebook.com/Ramta%C5%9F-Emsan-Korusan-%C5%9Eirketler-Grubu-263252127037975/" class="p-2 pl-0"><span class="icon-facebook"></span></a>
+              <a href="https://www.linkedin.com/company/emsan-korusan-ramta%C5%9F-a-%C5%9F/?viewAsMember=true" class="p-2 pl-0"><span class="icon-linkedin"></span></a>
+              <a href="https://www.instagram.com/emsankorusanramtas/" class="p-2 pl-0"><span class="icon-instagram"></span></a>
+
+            </div>
+            <div class="col-6">
+
+              <div class="d-flex ml-auto">
+                   <a href="{% url 'mainView' %}" class="d-flex align-items-center ml-auto mr-4">
+                  <span class="icon-home"></span>
+
+                </a>
+                <a href="mailto:info@korusan.com.tr" class="d-flex align-items-center ml-auto mr-4">
+                  <span class="icon-envelope mr-2"></span>
+                  <span class="d-none d-md-inline-block">info@korusan.com.tr</span>
+                </a>
+
+                <a href="tel:+90-216-484-2323" class="d-flex align-items-center">
+                  <span class="icon-phone mr-2"></span>
+                  <span class="d-none d-md-inline-block"> 0 (216) 484 23 23</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    <div class="bg p-4" style="background-color: #ff5633">
+ <ul class="nav navbar-nav">
+         <li class="active"><a href="{% url 'mainView' %}">Anasayfa</a></li>
+
+                    <li><a href="{% url 'productList' %}">Ürünlerimiz</a></li>
+
+                     <li>
+
+                     </li> <a href="{% url 'projectView' %}">Projelerimiz</a>
+                    </li>
+                    <li><a href="{% url 'services' %}">Hizmetlerimiz</a></li>
+                    <li><a href="{% url 'blogAll' %}">Blog</a></li>
+                    <li><a href="#contact-section" >Hakkımızda</a></li>
+                    <li><a href="{% url 'allContact' %}">İletişim</a></li>
+    </ul>
+
+    </div>
+  </div>
+  <nav class="navbar navbar-dark bg" style="background-color: #ff5633">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+</div>
+    </div>
+

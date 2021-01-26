@@ -1,0 +1,109 @@
+{% load static %}
+
+ <footer class="site-footer border-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-5 mb-lg-0">
+            <div class="row mb-5">
+              <div class="col-12">
+                <h3 class="footer-heading mb-4">Hakkımızda</h3>
+                <p>Emsan Korusan A.Ş. ve Ramtaş A.Ş. şirketler grubu ahşap koruma, emprenye uygulama , emprenye
+                        maddeleri, emprenyeli / emprenyesiz kereste üretimi konularında uzmanlaşmış
+                        ve 50 yılı aşkın tecrübesini genç ekibiyle birleştirmeyi başarmış bir firmadır..</p>
+              </div>
+            </div>
+            <div class="row mb-5">
+              <div class="col-md-12">
+                <h3 class="footer-heading mb-4">Menu</h3>
+              </div>
+              <div class="col-md-6 col-lg-6">
+                <ul class="list-unstyled">
+                  <li><a href="{% url 'mainView' %}">Anasayfa</a></li>
+                  <li><a href="{% url 'productList' %}">Ürünler</a></li>
+                  <li><a href="{% url 'blogAll' %}">Blog</a></li>
+                  <li><a href="{% url 'allContact' %}">İletişim Bilgileri</a></li>
+                </ul>
+              </div>
+
+            </div>
+
+
+          </div>
+          <div class="col-lg-4">
+
+
+            <div class="mb-5">
+              <h3 class="footer-heading mb-4">Haberler</h3>
+              <div class="block-25">
+                <ul class="list-unstyled">
+                    {% for blog in contents %}
+                  <li class="mb-3">
+                    <a href="{% url 'blogDetail' slug=blog.slug %}" class="d-flex">
+                      <figure class="image mr-4">
+                        <img src="{{blog.imageField.url}}" alt="" class="img-fluid">
+                      </figure>
+                      <div class="text">
+                        <span class="small text-uppercase date">{{blog.date}}</span>
+                        <h3 class="heading font-weight-light">{{blog.name}}</h3>
+                      </div>
+                    </a>
+                  </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+
+          <div class="col-lg-4 mb-5 mb-lg-0">
+
+            <div class="mb-5">
+              <h3 class="footer-heading mb-2">Kayıt</h3>
+              <p>Sektörle İlgili Gelişmelerden Anında Haberin Olsun</p>
+
+              <form action="" method="post" class="form-subscribe" name="mailingForm">{% csrf_token %}
+                <div class="input-group mb-3">
+                  <input type="email" class="form-control border-white text-white bg-transparent"
+                         placeholder="Mailini Gir" aria-label="Enter Email" aria-describedby="button-addon2" name="mail">
+                    <input type="hidden" name="mailType" value="True">
+                  <div class="input-group-append">
+                    <button class="btn btn-primary" type="submit" id="button-addon2">Gönder</button>
+                  </div>
+                </div>
+              </form>
+
+
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <h3 class="footer-heading mb-4">Bizi Takip Edin</h3>
+
+                <div>
+                  <a href="https://www.facebook.com/Ramta%C5%9F-Emsan-Korusan-%C5%9Eirketler-Grubu-263252127037975/" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
+
+                  <a href="https://www.instagram.com/emsankorusanramtas/" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+                  <a href="https://www.linkedin.com/company/emsan-korusan-ramta%C5%9F-a-%C5%9F/?viewAsMember=true" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+        </div>
+        <div class="row pt-5 mt-5 text-center">
+          <div class="col-md-12">
+            <p>
+
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                All rights reserved by Korusan EMSAN | This template is made with  by
+                <a href="https://www.lookupdijital.com" target="_blank" >LookupDijital</a>
+
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </footer>

@@ -1,0 +1,182 @@
+{% load static %}<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Korusan Emsan</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,700,900">
+    <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+
+
+    <link rel="stylesheet" href="{% static 'fonts/flaticon/font/flaticon.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.fancybox.min.css' %}">
+     <link rel="icon" href="{% get_media_prefix %}korsanlogopng.png" type="image/gif" sizes="16x16">
+    <link rel="shortcut icon" href="{% get_media_prefix %}korsanlogopng.png">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% include 'style.html' %}
+      {% include 'tagmanager.html' %}
+  </head>
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+      {% include 'tagmanagerbody.html' %}
+
+  <div id="overlayer"></div>
+  <div class="loader">
+    <div class="spinner-border text-primary" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+
+  <div class="site-wrap">
+
+    {% include 'headers.html' %}
+
+    <div class="site-section" id="projects-section" style="padding-top: 10em;">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-7 text-center">
+            <span class="sub-title">Emsan Korusan</span>
+            <h2 class="font-weight-bold text-black">Projelerimiz</h2>
+            <p class="mb-5">Gerçekleştirilen Projeler</p>
+          </div>
+        </div>
+        <div class="row">
+            {% for pro in projects %}
+          <div class="col-lg-4 col-md-6 mb-4 project-entry">
+            <a href="{{ pro.imageField.url }}" class="d-block figure" data-fancybox="gallery">
+              <img src="{{ pro.imageField.url }}" alt="Image"  width="350" height="200">
+            </a>
+            <h3 class="mb-0"><a href="#">{{ pro.name }}</a></h3>
+            <span class="text-muted">{{ pro.description|safe|truncatewords:4 }}</span>
+          </div>
+            {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <div class="site-section" id="news-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <span class="sub-title">Emsan Korusan'dan Haberler</span>
+            <h2 class="font-weight-bold text-black mb-5">Sektör Haber ve Bilgileri</h2>
+          </div>
+        </div>
+        <div class="row mb-5">
+            {% for blog in contents %}
+          <div class="col-lg-4 col-md-6 mb-4 mb-lg-0 post-entry">
+            <a href="{% url 'blogDetail' slug=blog.slug %}" class="d-block figure">
+              <img src="{{ blog.imageField.url }}" alt="Image" width="350" height="200">
+            </a>
+            <span class="text-muted d-block mb-1">{{ imageField.date }}</span>
+            <h3><a href="#"> {{ blog.name }}</a></h3>
+          </div>
+            {% endfor %}
+        </div>
+        <div class="row mt-5 text-center">
+          <div class="col-12">
+             <p><a href="{% url 'blogAll' %}" class="btn btn-primary btn-lg rounded-0">Hepsi</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="site-section bg-light" id="contact-section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-7 text-center">
+            <span class="sub-title">İletişime Geç</span>
+            <h2 class="font-weight-bold text-black">Neden KORUSAN?</h2>
+            <p class="mb-5">
+
+1963 yılında kurulmuş olan şirketlerimiz halen TEDAŞ,Türk Telekominikasyon A.Ş.
+                ve özel sektör kurumlarına emprenyeli ahşap telefon - elektrik direkleri,
+                maden direği, kereste, travers, çit kazığı, sera kerestesi,
+                su soğutma kulesi keresteleri, park-bahçe peyzajında kullanılan ahşap ürünler
+                ve son senelerde yoğun olarak bina dış cephe giydirmelerinde kullanılan
+                karkas üretiminde lider konumundadır.Halen toplam 300.000 m3/yıl kapasite
+                ve 7,5 m - 42 m arası uzunlukta vakum-basınç kazanları ile Türkiye'nin
+                çeşitli bölgelerinde hizmet vermekteyiz..
+            </p>
+          </div>
+        </div>
+        <div class="row">
+
+          <div class="col-md-12 col-lg-12">
+
+            <form action="#" class="p-5 bg-white" method="post">{% csrf_token %}
+
+                  <input type="hidden" name="formType" value="contact">
+              <div class="row form-group">
+                <div class="col-md-12 mb-3 mb-md-0">
+                  <label class="font-weight-bold" for="fullname">İsim Soyisim</label>
+                  <input type="text" id="fullname" class="form-control" placeholder="İsim Girin" name="name" required>
+                </div>
+              </div>
+              <div class="row form-group">
+                <div class="col-md-6">
+                  <label class="font-weight-bold" for="email">Email</label>
+                  <input type="email" id="id_email" class="form-control" placeholder="Email adresi" name="mail">
+                </div>
+                <div class="col-md-6">
+                  <label class="font-weight-bold" for="email">Telefon</label>
+                  <input type="tel" id="id_telefon" class="form-control" placeholder="Telefon" name="telefon" required>
+                </div>
+              </div>
+
+
+
+              <div class="row form-group">
+                <div class="col-md-12">
+                  <label class="font-weight-bold" for="message">Mesaj</label>
+                  <textarea name="message" id="message" cols="30" rows="5" class="form-control"  placeholder="Soru, Öneri ve Şikayetlerinizi Yazın."></textarea>
+                </div>
+              </div>
+
+              <div class="row form-group">
+                <div class="col-md-12">
+                  <input type="submit" value="Sizi Arayalım" class="btn btn-primary rounded-0 btn-lg">
+                </div>
+              </div>
+
+                <a href="tel:+90-216-484-2323" class="d-flex align-items-center">
+                  <span class="icon-phone mr-2"></span>
+                  <span class="d-none d-md-inline-block"> 0 (216) 484 23 23</span>
+                </a>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+     {% include 'footers.html' %}
+  </div>
+
+  <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+  <script src="{% static 'js/jquery-ui.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'js/jquery.countdown.min.js' %}"></script>
+  <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap-datepicker.min.js' %}"></script>
+  <script src="{% static 'js/aos.js' %}"></script>
+  <script src="{% static 'js/jquery.sticky.js' %}"></script>
+  <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+  <script src="{% static 'js/jquery.fancybox.min.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+
+
+  </body>
+</html>
