@@ -43,6 +43,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.mainView,name='mainView'),
     path('urunler/<slug:slug>/',views.productDetail,name='productDetail'),
+    path('kvk/',views.kvk,name='kvk'),
     path('urun/<slug:slug>/',views.productAltDetail,name='productAltDetail'),
     path('korsan-blog/<slug:slug>/',views.blogDetail,name='blogDetail'),
     path('tum-fabrikalar/',views.allContact,name='allContact'),

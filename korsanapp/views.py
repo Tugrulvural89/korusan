@@ -343,3 +343,5 @@ def mainViewThanks(request):
                                             'contents': contents,'firstNo':firstNo,'lastNo':lastNo,
                                              'resultNo':resultNo,'obj':obj
                                             })
+def kvk(request):
+    return render(request,'kvk.html',{})
