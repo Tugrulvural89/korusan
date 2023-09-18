@@ -1,0 +1,912 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="tr" xmlns="http://www.w3.org/1999/html">
+  <head>
+    <title>Korusan Emsan A.Ş ve Ramtaş A.Ş Kereste Üretimi</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="google-site-verification" content="Z1XeoqmqvqrdyfZjqsJiFHiiaVdwk0kZhzOAnJuI8cc" />
+        <meta name="description" content="Emsan Korusan,Emsan Korusan A.Ş. ve Ramtaş A.Ş. şirketler grubu ahşap koruma,
+        emprenye uygulama , emprenye maddeleri, emprenyeli / emprenyesiz kereste üretimi konularında uzmanlaşmış
+        ve 50 yılı aşkın tecrübesini genç ekibiyle birleştirmeyi başarmış bir firmadır..">
+        <meta name="keywords" content="Emsan Korusan, Ramtaş , kereste üretimi, emprenye maddeleri, ağaç ürünler, ahşap ürünler,
+            ahşap koruma , kereste üretim merkezi, emprenyeli kereste üretimi, kereste konularında uzman fabrika, tecrübeli kereste üreticisi,
+                izmir kereste üretimi, istanbul kereste üretimi, urla kereste, agaç tel direği,laminasyon">
+    <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+    
+    
+    <link rel="stylesheet" href="{% static 'fonts/flaticon/font/flaticon.css' %}">
+  
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.fancybox.min.css' %}">
+     <link rel="icon" href="{% get_media_prefix %}korsanlogopng.png" type="image/gif" sizes="16x16">
+    <link rel="shortcut icon" href="{% get_media_prefix %}korsanlogopng.png">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+      {% include 'tagmanager.html' %}
+      {% include 'headerIndex.html' %}
+
+      <style>
+
+          {% if obj.status == True %}
+              #mainteances {display: none;}
+              #mainteancesContent {display: none;}
+              {% else %}
+          {% endif %}
+      </style>
+  </head>
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+    
+
+  <div id="overlayer"></div>
+  <div class="loader">
+    <div class="spinner-border text-primary" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+
+  <div class="site-wrap">
+{% include 'headers.html' %}
+ <!-- <div id="mainteances">
+      <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+      <div class="site-navbar-wrap">
+      <div class="site-navbar-top">
+        <div class="container py-3">
+          <div class="row align-items-center">
+            <div class="col-6">
+              <a href="https://www.facebook.com/Ramta%C5%9F-Emsan-Korusan-%C5%9Eirketler-Grubu-263252127037975/" class="p-2 pl-0"><span class="icon-facebook"></span></a>
+              <a href="https://www.linkedin.com/company/emsan-korusan-ramta%C5%9F-a-%C5%9F/?viewAsMember=true" class="p-2 pl-0"><span class="icon-linkedin"></span></a>
+              <a href="https://www.instagram.com/emsankorusanramtas/" class="p-2 pl-0"><span class="icon-instagram"></span></a>
+            </div>
+            <div class="col-6">
+              <div class="d-flex ml-auto">
+                <a href="mailto:info@korusan.com.tr" class="d-flex align-items-center ml-auto mr-4">
+                  <span class="icon-envelope mr-2"></span>
+                  <span class="d-none d-md-inline-block">info@korusan.com.tr</span>
+                </a>
+                <a href="tel:+90-216-484-2323" class="d-flex align-items-center">
+                  <span class="icon-phone mr-2"></span>
+                  <span class="d-none d-md-inline-block"> 0 (216) 484 23 23</span>
+                </a>
+                <a href="{% url 'allContact' %}" class="d-flex align-items-center ml-2">
+                  <span class="icon-search-plus mr-2"></span>
+                  <span class="d-none d-md-inline-block">Hepsi</span>
+                </a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="site-navbar site-navbar-target js-sticky-header">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-2">
+
+
+            </div>
+            <div class="col-10">
+              <nav class="site-navigation text-right" role="navigation">
+                <div class="container">
+                  <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a></div>
+
+                  <ul class="site-menu main-menu js-clone-nav d-none d-lg-block">
+                        <li>
+                                  <a href="#home-section" class="nav-link">Anasayfa</a>
+                              </li>
+
+
+                    <li>
+                      <a href="#about-section-product" class="nav-link">Ürünlerimiz</a>
+
+
+
+                    </li>
+                    <li>
+                      <a href="#projects-section" class="nav-link">Projelerimiz</a>
+                    </li>
+                    <li><a href="#faq-section" class="nav-link">Hizmetlerimiz</a></li>
+                    <li><a href="#news-section" class="nav-link">Blog</a></li>
+                    <li><a href="#faq-section" class="nav-link">Hakkımızda</a></li>
+                    <li><a href="#contact-section" class="nav-link">İletişim</a></li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+-->
+
+
+    
+    <div class="site-blocks-cover overlay" style="background-image: url('{% get_media_prefix %}ssback.jpg');" data-aos="fade" data-stellar-background-ratio="0.5" id="home-section">
+      <div class="container">
+        <div class="row align-items-center text-center justify-content-center">
+          <div class="col-md-8">
+            <a data-fancybox data-ratio="2" href="{% get_media_prefix %}korusanBgVideo.mp4" class="play-button d-block">
+              <span class="icon-play"></span>
+            </a>
+              <span class="sub-text mb-3 d-block">
+                    <a href="#">
+                        <img class="lazy" src="#" data-src="{% get_media_prefix %}korsanlogopng.png" width="200" height="160">
+                    </a>
+                </span>
+
+           <!-- <h1 class="text-uppercase">Emsan Korusan</h1>-->
+
+
+              {% if obj.status == True %}
+                <h3 style="color: white;">Kısa bir süre için bakımdayız...<br>
+                    Telefon : <a href="tel:+902164842323">(216) 484 23 23 </a><br>
+                    Email : <a href="mailto:bilgi@korusan.com.tr">bilgi@korusan.com.tr</a></h3>
+
+              {% else %}
+                <span class="sub-text mb-3 d-block"><em style="color: white;font-size: larger;">50 YILI AŞKIN TECRÜBE İLE ...</em></span>
+
+              {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>  
+
+   <div id="mainteancesContent">
+    <div class="site-section  border-bottom">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
+            <div class="media custom-media">
+              <div class="mr-3 icon"><span class="flaticon-measuring display-4"></span></div>
+              <div class="media-body">
+                <h5 class="mt-0">Kereste Üretimi</h5>
+                Bolu’da 56.000 m2 arazi içerinde 4.500 m2 kapalı alanda ve Merzifon / Amasya’da 18.000 m2 içerinde
+                  2.000 m2 kapalı alanda tomruktan son kullanım haline getirilene kadar tüm işlemleri
+                  kendi bünyemizde yaparak ahşap üretimi yapılmaktadır.
+              </div>
+            </div>
+          </div>
+
+
+
+
+          <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
+            <div class="media custom-media">
+              <div class="mr-3 icon"><span class="flaticon-step-ladder display-4"></span></div>
+              <div class="media-body">
+                <h5 class="mt-0">Kimyasal</h5>
+                Alman Firmalarından alınan Üretim Lisansları ile CCB emprenye maddesinin üretimi yapılmaktadır.
+                  Emprenye maddesi üretimi konusunda Türkiye’deki tek firmadır.
+                  Ayrıca; Vakum basınç yöntemi ile uygulanan Yeni Nesil emprenye maddeleri ve
+                  renk pigmentlerinin, Daldırma Yöntemi ile uygulanan Su Bazlı Emprenye maddelerinin
+                  ve özellikle paletlerde Mavi Küfe engel olan kimyasalların ithalatını gerçekleştirmektedir.
+              </div>
+            </div>
+          </div>
+
+ <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
+            <div class="media custom-media">
+              <div class="mr-3 icon"><span class="display-4">
+                  <img class="lazy" src="#" data-src="{% get_media_prefix %}firewood.png" width="56" height="55"></span></div>
+              <div class="media-body">
+                <h5 class="mt-0">Ahşap Tel Direği</h5>
+                Elektrik Dağıtım ve Telekomünikasyon kablolu iletim hatlarında kullanılan 7 metre ile 12 metre
+                  arasında olan Emprenyeli Ahşap Tel Direk üretimini ülkemizin 8 ayrı noktasında yapılmaktadır.
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+          <div class="row mt-5 text-center">
+          <div class="col-12">
+            <p><a href="#accordionExample" class="btn btn-primary btn-lg rounded-1">Daha Fazla</a></p>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+
+ <div class="site-section about-section" id="about-section-product">
+      <div class="container">
+        <div class="row align-items-center mb-5 pb-5">
+          <div class="col-lg-7 img-years mb-5 mb-lg-0">
+            <img src="#" data-src="{% get_media_prefix %}dikey1.jpg" alt="Image" class="img-fluid lazy">
+          </div>
+          <div class="col-lg-4 ml-auto">
+            <span class="sub-title">Korusan Emsan</span>
+            <h3 class="mb-4">Tüm Ürünler</h3>
+            <ul class="list-unstyled ul-check text-left success mb-5">
+                {% for cat in mainCat %}
+                <li>
+                    <a href="{% url 'productDetail' slug=cat.slug %}">
+                        <strong>{{ cat.name }}</strong>
+                    </a>
+                </li>
+                {% endfor %}
+              </ul>
+
+        <div class="row mt-5 text-center">
+          <div class="col-12">
+            <p><a href="{% url 'productList' %}" class="btn btn-primary btn-lg rounded-1">Tüm Ürünleri Gör</a></p>
+          </div>
+        </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+    <div class="site-section about-section" id="about-section">
+      <div class="container">
+        <div class="row align-items-center mb-5 pb-5">
+          <div class="col-lg-7 img-years mb-5 mb-lg-0">
+            <img src="#" data-src="{% get_media_prefix %}dikey2.jpg" alt="Image" class="img-fluid lazy">
+          </div>
+          <div class="col-lg-4 ml-auto">
+            <span class="sub-title">Neden KORUSAN</span>
+            <h3 class="mb-4">Hakkımızda</h3>
+            <p class="mb-4">Emsan Korusan A.Ş. ve Ramtaş A.Ş. şirketler grubu ahşap koruma,
+                emprenye uygulama, emprenye maddeleri, emprenyeli / emprenyesiz kereste üretimi,
+                ahşap tel direk üretimi konularında uzmanlaşmış ve 50 yılı aşkın tecrübesini genç
+                ekibiyle birleştirmeyi başarmış bir firmadır.</p>
+            <ul class="list-unstyled ul-check text-left success mb-5">
+                <li><strong>50 yıldan fazla tecrübe :</strong>
+Müşterilerimize iyi  bir hizmet sunmak için kaliteli işçilik, üstün bilgi ve düşük fiyatları bir araya getiriyoruz.</li>
+                <li><strong>En Kaliteli Metaryaller :</strong>
+Ürünlerimizin sorunsuz çalışmasını sağlayacak deneyim, personel ve kaynaklara sahibiz.</li>
+                <li><strong>Profesyonel Standartlar :</strong>
+Müşteri memnuniyeti adına ürünlerimiz belirli standartlar çerçevesinde yapılmaktadır.</li>
+            <li><strong>Neredeyiz?</strong>
+            Yeni Şile Yolu Üzeri, Ekşioğlu Mah. 30. Sok. No:19 </li>
+              </ul>
+              <div class="row mt-5 text-center">
+          <div class="col-12">
+            <p><a href="#contact-section" class="btn btn-primary btn-lg rounded-1">Bilgi Al</a></p>
+          </div>
+        </div>
+
+          </div>
+        </div>
+
+        
+      </div>
+    </div>
+    
+    
+   {% comment %} <div class="site-section" id="our-team-section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-7 text-center">
+            <span class="sub-title">Meet Our Team</span>
+            <h2 class="font-weight-bold text-black">Our Team</h2>
+            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, explicabo, quasi. Magni deserunt sunt labore.</p>
+          </div>
+        </div>
+       
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="person">
+              <div class="bio-img">
+                <figure>
+                  <img loading=lazy src="{% static 'images/person_1.jpg' %}" alt="Image" class="img-fluid">
+                </figure>
+                <div class="social">
+                  <a href="#"><span class="icon-facebook"></span></a>
+                  <a href="#"><span class="icon-twitter"></span></a>
+                  <a href="#"><span class="icon-instagram"></span></a>
+                </div>
+              </div>
+              <h2>Cloe Marena</h2>
+              <span class="sub-title d-block mb-3">Architect</span>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum excepturi corporis qui doloribus perspiciatis ipsa modi accusantium repellat.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="person">
+              <div class="bio-img">
+                <figure>
+                  <img loading=lazy src="{% static 'images/person_2.jpg' %}" alt="Image" class="img-fluid">
+                </figure>
+                <div class="social">
+                  <a href="#"><span class="icon-facebook"></span></a>
+                  <a href="#"><span class="icon-twitter"></span></a>
+                  <a href="#"><span class="icon-instagram"></span></a>
+                </div>
+              </div>
+              <h2>John Rooster</h2>
+              <span class="sub-title d-block mb-3">Designer</span>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum excepturi corporis qui doloribus perspiciatis ipsa modi accusantium repellat.</p>
+              
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="person">
+              <div class="bio-img">
+                <figure>
+                  <img loading=lazy src="{% static 'images/person_3.jpg' %}" alt="Image" class="img-fluid">
+                </figure>
+                <div class="social">
+                  <a href="#"><span class="icon-facebook"></span></a>
+                  <a href="#"><span class="icon-twitter"></span></a>
+                  <a href="#"><span class="icon-instagram"></span></a>
+                </div>
+              </div>
+              <h2>Will Turner</h2>
+              <span class="sub-title d-block mb-3">Designer</span>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum excepturi corporis qui doloribus perspiciatis ipsa modi accusantium repellat.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="person">
+              <div class="bio-img">
+                <figure>
+                  <img loading=lazy src="{% static 'images/person_4.jpg' %}" alt="Image" class="img-fluid">
+                </figure>
+                <div class="social">
+                  <a href="#"><span class="icon-facebook"></span></a>
+                  <a href="#"><span class="icon-twitter"></span></a>
+                  <a href="#"><span class="icon-instagram"></span></a>
+                </div>
+              </div>
+              <h2>Nicolas Stainer</h2>
+              <span class="sub-title d-block mb-3">Engineer</span>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum excepturi corporis qui doloribus perspiciatis ipsa modi accusantium repellat.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="person">
+              <div class="bio-img">
+                <figure>
+                  <img loading=lazy src="{% static 'images/person_5.jpg' %}" alt="Image" class="img-fluid">
+                </figure>
+                <div class="social">
+                  <a href="#"><span class="icon-facebook"></span></a>
+                  <a href="#"><span class="icon-twitter"></span></a>
+                  <a href="#"><span class="icon-instagram"></span></a>
+                </div>
+              </div>
+              <h2>George Brook</h2>
+              <span class="sub-title d-block mb-3">Architect</span>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum excepturi corporis qui doloribus perspiciatis ipsa modi accusantium repellat.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="person">
+              <div class="bio-img">
+                <figure>
+                  <img loading=lazy src="{% static 'images/person_6.jpg' %}" alt="Image" class="img-fluid">
+                </figure>
+                <div class="social">
+                  <a href="#"><span class="icon-facebook"></span></a>
+                  <a href="#"><span class="icon-twitter"></span></a>
+                  <a href="#"><span class="icon-instagram"></span></a>
+                </div>
+              </div>
+              <h2>Emely Hopson</h2>
+              <span class="sub-title d-block mb-3">Designer</span>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum excepturi corporis qui doloribus perspiciatis ipsa modi accusantium repellat.</p>
+              
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>{% endcomment %}
+
+   {% comment %} <div class="site-section" id="pricing-section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-7 text-center">
+            <span class="sub-title">Pricing</span>
+            <h2 class="font-weight-bold text-black">Choose Your Plan</h2>
+            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, explicabo, quasi. Magni deserunt sunt labore.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4 mb-lg-0 pricing">
+            <div class="border p-5 text-center rounded">
+              <h3>Starter</h3>
+              <div class="price mb-3"><sup class="currency">$</sup><span class="number">30</span> <span class="per">/year</span></div>
+              <p class="text-muted mb-4">* Billed annualy or $10 per month</p>
+              <ul class="list-unstyled ul-check text-left success mb-5">
+                <li>Max 5 users</li>
+                <li>29 local security</li>
+                <li class="text-muted"><del>Desktop App</del></li>
+                <li class="text-muted"><del>Email Support</del></li>
+                <li class="text-muted"><del>Phone Support 24/7</del></li>
+              </ul>
+              <p><a href="#" class="btn btn-lg btn-primary rounded-0 btn-block">Buy Now</a></p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4 mb-lg-0 pricing">
+            <div class="border p-5 text-center rounded">
+              <h3>Professional</h3>
+              <div class="price mb-3"><sup class="currency">$</sup><span class="number">72</span> <span class="per">/year</span></div>
+              <p class="text-muted mb-4">* Billed annualy or $30 per month</p>
+              <ul class="list-unstyled ul-check text-left success mb-5">
+                <li>Max 10 users</li>
+                <li>29 local security</li>
+                <li>Desktop App</li>
+                <li>Email Support</li>
+                <li class="text-muted"><del>Phone Support 24/7</del></li>
+              </ul>
+              <p><a href="#" class="btn btn-lg btn-primary rounded-0 btn-block">Buy Now</a></p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4 mb-lg-0 pricing">
+            <div class="border p-5 text-center rounded">
+              <h3>Enterprise</h3>
+              <div class="price mb-3"><sup class="currency">$</sup><span class="number">130</span> <span class="per">/year</span></div>
+              <p class="text-muted mb-4">* Billed annualy or $10 per month</p>
+              <ul class="list-unstyled ul-check text-left success mb-5">
+                <li>Unlimitted users</li>
+                <li>29 local security</li>
+                <li>Desktop App</li>
+                <li>Email Support</li>
+                <li>Phone Support 24/7</li>
+              </ul>
+              <p><a href="#" class="btn btn-lg btn-primary rounded-0 btn-block">Buy Now</a></p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>   {% endcomment %}
+
+    <div class="site-section" id="faq-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <img src="#" data-src="{% get_media_prefix %}dikey4.jpg" alt="Image" class="img-fluid lazy">
+          </div>
+          
+          <div class="col-lg-6 ml-auto pl-lg-5">
+            <span class="sub-title">Emsan Korusan</span>
+            <h2 class="font-weight-bold text-black mb-5">Servislerimiz</h2>
+            <div class="accordion" id="accordionExample">
+              
+
+              <div class="accordion-item">
+                <h2 class="mb-0 rounded mb-2">
+                  <a href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Kereste Üretimi</a>
+                </h2>
+
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                  <div class="accordion-body">
+                 <p>
+                     Firmamız 2003 yılı itibariyle Bolu’da 56.000 M2 alan üzerine 4.500 m2 kapalı alan ve Merzifon/Amasya’da 18.000 m2 ve 2.000 kapalı alanda kereste imalatı yapmaktadır. Bu tesislerimizde tomruktan başlanarak son kullanım haline getirilen keresteler tamamen kendi bünyemizde organize edilmektedir. Yılda 50.000 m3 tomruk işlenmektedir. Tesisimizde Ukrayna çamı, Sibirya çamı, yerli çam ve köknar işlenmektedir. Üretilen bu keresteler 100 m3 kapasiteli kurutma fırınımızda kurutularak 42 m uzunluğundaki emprenye tesisimizde vakum-basınç yöntemi ile yeşil ve kahverengi olarak emprenye yapılmaktadır. Tesislerimiz; hammadde tedarik noktalarına yakın olması ve Türkiye geneline yayılmış olan tesis ve müşterilerimize sevkiyatların yapılabilmesi noktasında stratejik bir öneme sahip olan Bolu ve Merzifon/Amasya ilinde bulunmaktadır.<br><br>
+
+Tüm üretimlerimiz  ISO 9001, ISO 14001, ISO 18001 kalite standartlarına uygun olarak gerçekleştirilmektedir. Üretimini
+                     gerçekleştirdiğimiz ürünlerimizin tamamı TSE Standartlarına uygundur.
+                     Ayrıca tüm tesislerimiz çevre mevzuatlarına uyumlu  olarak faaliyet
+                     göstermekte  olup bu durum gerekli makamlar tarafından belgelendirilmiştir.<br><br>
+
+* Tomruk biçme : 50.000 m3/Yıl<br>
+
+* Profil çekme : 25.000 m3/Yıl<br>
+
+* Yuvarlak standart torna çekme : 15.000 m3/Yıl<br>
+
+* Fırınlı Ahşap Kurutma : 20.000 m3/Yıl<br>
+
+* Emprenye işlemi : 300.000 m3/Yıl
+                 </p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="accordion-item">
+                <h2 class="mb-0 rounded mb-2">
+                  <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Kimyasal
+                  </a>
+                </h2>
+               
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                  <div class="accordion-body">
+                  <p>Alman Firmalarından alınan Üretim Lisansları ile CCB emprenye maddesinin üretimi yapılmaktadır. Emprenye maddesi üretimi konusunda Türkiye’deki tek firmadır. Ayrıca; Vakum basınç yöntemi ile uygulanan Yeni Nesil emprenye maddeleri ve renk pigmentlerin, Daldırma Yöntemi ile uygulanan Su Bazlı Emprenye maddelerinin ve özellikle paletlerde Mavi Küfe engel olan kimyasalların ithalatını gerçekleştirmektedir.<br><br>
+
+Emprenye maddesi imalatı : 1.800.000 Kg./Yıl<br>
+
+Daldırma Emprenye Maddesi imalatı:  500.000 Lt./Yıl<br>
+                  </p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="accordion-item">
+                <h2 class="mb-0 rounded mb-2">
+                  <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Agaç Tel Direği
+                  </a>
+                </h2>
+                
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <p>
+                        Şirketlerimiz, kuruldukları 1960’lı yıllarda yurdumuzda henüz kullanılmayan bir
+                        yöntem olan ahşap emprenyesini dönemin yetkililerinin de bu konuya ilgi göstermeleri
+                        ile  Türkiye de ilk başlatan kurumlar olmuşlardır. Bu dönemde en fazla emprenyeli
+                        ahşaba ihtiyaç gösteren kurumlar telefon ve  elektrik direkleri kullanımları çok yoğun
+                        olan TEDAŞ ve TELEKOM olmuştur.Bundan dolayı yurdumuzda ahşap emprenyesinin  ilk
+                        kullanıldığı grup  tel direkleri olmuştur. O dönemden zamanımıza kadar kalan ve halen
+                        problemsiz görev yapan emprenyeli direklerin varlığı şirketlerimiz için ayrı bir övünç
+                        kaynağıdır.Türkiye de şu an dikili olarak faal halde bulunan tel direklerinin yaklaşık  % 80'i
+                        şirketlerimiz tarafından emprenye  edilmiştir.<br><br>
+
+Zaman içerisinde gerek teknolojik gelişmeler  gerekse bu  kurumların ihtiyaçlarının yıllar
+                        içerisinde farklılık göstermesi sebebi ile tel
+                        direği emprenyemiz farklı ağırlıklarda olmakla
+                        birlikte  halen esas faaliyet alanlarımızdan biri
+                        olarak devam etmekte ve T.C. de bu alanda kapasitesi
+                        en fazla olan şirketler grubu olarak varlığımızı sürdürmekteyiz. <br><br>
+
+Emprenyeli Ahşap Tel Direk 250.000 Adet
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="accordion-item">
+                <h2 class="mb-0 rounded mb-2">
+                  <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    Laminasyon
+                  </a>
+                </h2>
+
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                  <div class="accordion-body">
+                  <p>Firmamız Bolu'da laminasyon yapmaktadır
+                    Laminasyon tekniğinde lamine oluşturmanın teknolojisi, kısaca küçük kesitli birçok tahtanın tabaka
+                      halinde birbirleri ile yapıştırılması ve hammadde odunun daha tasarruflu
+                      olarak kullanımı, başkaca, yapı elemanlarının fiziksel ve mekanik özelliklerinin
+                      iyileştirilmesi olarak ifade edilebilir. <br><br>
+Başlıca Kullanım Alanları ;<br>
+a. Köprü inşası, hipodrom, gemi kısımları,<br>
+b. Ahşap evlerin iç taşıyıcı elemanlarında,<br>
+c. Ahşap evlerin merdiven, tavan, duvar ve yer döşemelerinde,<br>
+ç. Okul, cami, alışveriş merkezi gibi yapılar,<br>
+d. Spor salonları, kapalı yüzme havuzu, kapalı tribün yapıları,<br>
+e. Büyük depo ve hangar yapımı, fabrika binaları,<br>
+f. Sinema, tiyatro, konser, teşhir ve gösteri salonlarının iç mekanlarında,<br>
+g. Konut, otel, bahçe mobilyası, pergola yapımı,<br>
+ğ. Kapı, pencere, pervaz ve lambri üretiminde,<br>
+h. Vagon ve karavanların duvar, tavan ve yer döşemelerinde,<br>
+ı. Hava ve deniz ulaşım araçlarının iç mekanlarında kullanılır.</p>
+                  </div>
+                </div>
+              </div>
+
+              {% comment %}<div class="accordion-item">
+                <h2 class="mb-0 rounded mb-2">
+                  <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    Where to find you? Where is your location?
+                  </a>
+                </h2>
+
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos quos incidunt, perspiciatis, ad saepe, magnam error adipisci vitae ut provident alias! Odio debitis error ipsum molestiae voluptas accusantium quibusdam animi, soluta explicabo asperiores aliquid, modi natus suscipit deleniti. Corrupti, autem.</p>
+                  </div>
+                </div>
+              </div>{% endcomment %}
+             
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+   {% comment %} <div class="container site-section block-13 testimonial-wrap">
+
+      <div class="row">
+        <div class="col-12 text-center">
+          <span class="sub-title">Happy Clients</span>
+          <h2 class="font-weight-bold text-black mb-5">Testimonials</h2>
+        </div>
+      </div>
+
+      <div class="nonloop-block-13 owl-carousel">
+        
+        <div class="testimony px-5">
+          <img loading=lazy src="{% static 'images/person_1.jpg' %}" alt="Image" class="img-fluid">
+          <h3>Cloe Marena</h3>
+          <span class="sub-title">Owner of Building Co.</span>
+          <p>&ldquo;<em>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium non eligendi totam natus ullam cumque! Assumenda optio, ad in! Nesciunt natus veritatis hic iste quas. Sunt iste autem vel repudiandae.</em>&rdquo;</p>
+        </div>
+      
+        <div class="testimony px-5">
+          <img loading=lazy src="{% static 'images/person_2.jpg' %}" alt="Image" class="img-fluid">
+          <h3>Nathalie Channie</h3>
+          <span class="sub-title">Owner of Building Co.</span>
+          <p>&ldquo;<em>Eveniet, laboriosam impedit facilis. Voluptatem, repudiandae eligendi maiores sunt itaque, dolores voluptas labore perferendis, illum tenetur suscipit vero officia. Quaerat facilis cum ex a labore iusto, beatae fuga nam rem, quos vel aliquam nobis.</em>&rdquo;</p>
+        </div>
+
+        <div class="testimony px-5">
+          <img loading=lazy src="{% static 'images/person_3.jpg' %}" alt="Image" class="img-fluid">
+          <h3>Will Turner</h3>
+          <span class="sub-title">Owner of Building Co.</span>
+          <p>&ldquo;<em>Laboriosam nisi natus quos soluta blanditiis iste in distinctio fugiat perferendis, architecto eveniet provident, consequatur dolore ab nihil voluptatibus laborum magnam cum assumenda nobis, nam quam quae! Unde porro laboriosam nam qui! Eligendi, qui!</em>&rdquo;</p>
+        </div>
+
+        <div class="testimony px-5">
+          <img loading=lazy src="{% static 'images/person_4.jpg' %}" alt="Image" class="img-fluid">
+          <h3>Nicolas Stainer</h3>
+          <span class="sub-title">Owner of Building Co.</span>
+          <p>&ldquo;<em>Voluptatibus sed vero corporis reiciendis, ducimus iste aliquam doloribus voluptas nam quo assumenda perferendis excepturi accusantium, ipsam minus tempora earum exercitationem laborum. Delectus voluptate quaerat repellat obcaecati. Qui nemo ad similique facere modi dolores.</em>&rdquo;</p>
+        </div>
+      </div>
+    </div>{% endcomment %}
+
+    
+    <div class="site-section" id="projects-section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-7 text-center">
+            <span class="sub-title">Emsan Korusan</span>
+            <h2 class="font-weight-bold text-black">Projelerimiz</h2>
+            <p class="mb-5">Gerçekleştirilen Projeler</p>
+          </div>
+        </div>
+        <div class="row">
+            {% for pro in projects %}
+          <div class="col-lg-4 col-md-6 mb-4 project-entry">
+            <a href="{{ pro.imageField.url }}" class="d-block figure" data-fancybox="gallery">
+              <img src="#" data-src="{{ pro.imageField.url }}" alt="Image"  width="350" height="200" class="lazy">
+            </a>
+            <h3 class="mb-0"><a href="#">{{ pro.name }}</a></h3>
+            <span class="text-muted">{{ pro.description|safe|truncatewords:4 }}</span>
+          </div>
+            {% endfor %}
+        </div>
+      </div>
+    </div>
+
+
+    
+
+    <div class="site-section" id="news-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <span class="sub-title">Emsan Korusan'dan Haberler</span>
+            <h2 class="font-weight-bold text-black mb-5">Sektör Haber ve Bilgileri</h2>
+          </div>
+        </div>
+        <div class="row mb-5">
+            {% for blog in contents %}
+          <div class="col-lg-4 col-md-6 mb-4 mb-lg-0 post-entry">
+            <a href="{% url 'blogDetail' slug=blog.slug %}" class="d-block figure">
+              <img src="#" data-src="{{ blog.imageField.url }}" alt="Image" width="350" height="200" class="lazy">
+            </a>
+            <span class="text-muted d-block mb-1">{{ imageField.date }}</span>
+            <h3><a href="#"> {{ blog.name }}</a></h3>
+          </div>
+            {% endfor %}
+        </div>
+        <div class="row mt-5 text-center">
+          <div class="col-12">
+            <p><a href="{% url 'blogAll' %}" class="btn btn-primary btn-lg rounded-1">Hepsi</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="site-section bg-light" id="contact-section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-7 text-center">
+            <span class="sub-title">İletişime Geç</span>
+            <h2 class="font-weight-bold text-black">Neden KORUSAN?</h2>
+            <p class="mb-5">
+
+1963 yılında kurulmuş olan şirketlerimiz halen TEDAŞ,Türk Telekominikasyon A.Ş.
+                ve özel sektör kurumlarına emprenyeli ahşap telefon - elektrik direkleri,
+                maden direği, kereste, travers, çit kazığı, sera kerestesi,
+                su soğutma kulesi keresteleri, park-bahçe peyzajında kullanılan ahşap ürünler
+                ve son senelerde yoğun olarak bina dış cephe giydirmelerinde kullanılan
+                karkas üretiminde lider konumundadır.Halen toplam 300.000 m3/yıl kapasite
+                ve 7,5 m - 42 m arası uzunlukta vakum-basınç kazanları ile Türkiye'nin
+                çeşitli bölgelerinde hizmet vermekteyiz..
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          
+          <div class="col-md-12 col-lg-12">
+          
+            <form action='' class="p-5 bg-white" method="post">{% csrf_token %}
+
+                  <input type="hidden" name="formType" value="contact">
+              <div class="row form-group">
+                <div class="col-md-12 mb-3 mb-md-0">
+                  <label class="font-weight-bold" for="fullname">İsim Soyisim</label>
+                  <input type="text" id="fullname" class="form-control" placeholder="İsim Girin" name="name" required>
+                </div>
+              </div>
+              <div class="row form-group">
+                <div class="col-md-6">
+                  <label class="font-weight-bold" for="email">Email</label>
+                  <input type="email" id="id_email" class="form-control" placeholder="Email adresi" name="mail">
+                </div>
+                <div class="col-md-6">
+                  <label class="font-weight-bold" for="email">Telefon</label>
+                  <input type="tel" id="id_telefon" class="form-control" placeholder="Telefon" name="telefon" required>
+                </div>
+              </div>
+
+              
+
+              <div class="row form-group">
+                <div class="col-md-12">
+                  <label class="font-weight-bold" for="message">Mesaj</label>
+                  <textarea name="message" id="message" cols="30" rows="5" class="form-control"  placeholder="Soru, Öneri ve Şikayetlerinizi Yazın."></textarea>
+                </div>
+              </div>
+                 <div class="row form-group">
+                    <div class="col-md-12">
+                      <label class="font-weight-bold" for="message">İşlemi Cevaplayın:</label>
+                        <div class="d-flex">
+                            <p>{{ firstNo }}</p> + <p>{{ lastNo }}</p> =
+                            <input type="number" name="result" required>
+                            <input type="hidden" name="resultvalue" value="{{ resultNo }}">
+                        </div>
+
+                    </div>
+                  </div>
+              <div class="row form-group">
+                <div class="col-md-12">
+                  <input type="submit" value="Sizi Arayalım" class="btn btn-primary rounded-0 btn-lg">
+                </div>
+              </div>
+
+                <a href="tel:+90-216-484-2323" class="d-flex align-items-center">
+                  <span class="icon-phone mr-2"></span>
+                  <span class="d-md-inline-block"> 0 (216) 484 23 23</span>
+                </a>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+   {% include 'footers.html' %}
+</div>
+  </div>
+
+  <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+  <script src="{% static 'js/jquery-ui.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'js/jquery.countdown.min.js' %}"></script>
+  <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap-datepicker.min.js' %}"></script>
+  <script src="{% static 'js/aos.js' %}"></script>
+  <script src="{% static 'js/jquery.sticky.js' %}"></script>
+  <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+  <script src="{% static 'js/jquery.fancybox.min.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+
+  <script>
+      /* lazyload.js (c) Lorenzo Giuliani
+ * MIT License (http://www.opensource.org/licenses/mit-license.html)
+ *
+ * expects a list of:
+ * `<img src="blank.gif" data-src="my_image.png" width="600" height="400" class="lazy">`
+ */
+
+!function(window){
+  var $q = function(q, res){
+        if (document.querySelectorAll) {
+          res = document.querySelectorAll(q);
+        } else {
+          var d=document
+            , a=d.styleSheets[0] || d.createStyleSheet();
+          a.addRule(q,'f:b');
+          for(var l=d.all,b=0,c=[],f=l.length;b<f;b++)
+            l[b].currentStyle.f && c.push(l[b]);
+
+          a.removeRule(0);
+          res = c;
+        }
+        return res;
+      }
+    , addEventListener = function(evt, fn){
+        window.addEventListener
+          ? this.addEventListener(evt, fn, false)
+          : (window.attachEvent)
+            ? this.attachEvent('on' + evt, fn)
+            : this['on' + evt] = fn;
+      }
+    , _has = function(obj, key) {
+        return Object.prototype.hasOwnProperty.call(obj, key);
+      }
+    ;
+
+  function loadImage (el, fn) {
+    var img = new Image()
+      , src = el.getAttribute('data-src');
+    img.onload = function() {
+      if (!! el.parent)
+        el.parent.replaceChild(img, el)
+      else
+        el.src = src;
+
+      fn? fn() : null;
+    }
+    img.src = src;
+  }
+
+  function elementInViewport(el) {
+    var rect = el.getBoundingClientRect()
+
+    return (
+       rect.top    >= 0
+    && rect.left   >= 0
+    && rect.top <= (window.innerHeight || document.documentElement.clientHeight)
+    )
+  }
+
+    var images = new Array()
+      , query = $q('img.lazy')
+      , processScroll = function(){
+          for (var i = 0; i < images.length; i++) {
+            if (elementInViewport(images[i])) {
+              loadImage(images[i], function () {
+                images.splice(i, i);
+              });
+            }
+          };
+        }
+      ;
+    // Array.prototype.slice.call is not callable under our lovely IE8
+    for (var i = 0; i < query.length; i++) {
+      images.push(query[i]);
+    };
+
+    processScroll();
+    addEventListener('scroll',processScroll);
+
+}(this);
+  </script>
+
+  </body>
+</html>

@@ -24,8 +24,7 @@ SECRET_KEY = '@_r1s%$n&7c@+fyif6c^6n%j!dk=9652*#&qw0g-l_#o_cl7hz'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','total-reef-284308.ew.r.appspot.com','korusan.com.tr','www.korusan.com.tr',
-                 'bdc25d128ec1.ngrok.io']
+ALLOWED_HOSTS = ['127.0.0.1','korusan.com.tr','www.korusan.com.tr',"95.14.78.24"]
 EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
 
 SENDGRID_API_KEY = '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'
@@ -51,18 +50,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'captcha',
-    'korsanapp.apps.KorsanappConfig',
+    'korsanapp',
     'ckeditor',
     'ckeditor_uploader',
-    'corsheaders',
     'django.contrib.sitemaps',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -70,7 +66,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ORIGIN_ALLOW_ALL = True
 ROOT_URLCONF = 'korusan.urls'
 
 TEMPLATES = [
@@ -151,14 +146,7 @@ USE_TZ = True
 
 
 
-# for local environment
-import os
 
-from google.oauth2 import service_account
-
-GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
-    BASE_DIR + "/korusanemsan.json"
-)
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
