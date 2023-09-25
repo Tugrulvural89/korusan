@@ -1,9 +1,11 @@
 User-agent: Googlebot
+Disallow:/admin
 
 User-agent: AdsBot-Google
+Disallow:/admin
 
 User-agent: Googlebot-Image
+Disallow:/admin
 
 User-Agent: *
 Disallow: /admin/
-Disallow: /admin
