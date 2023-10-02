@@ -128,14 +128,15 @@
               <a href="https://www.facebook.com/Ramta%C5%9F-Emsan-Korusan-%C5%9Eirketler-Grubu-263252127037975/" class="p-2 pl-0"><span class="icon-facebook"></span></a>
               <a href="https://www.linkedin.com/company/emsan-korusan-ramta%C5%9F-a-%C5%9F/?viewAsMember=true" class="p-2 pl-0"><span class="icon-linkedin"></span></a>
               <a href="https://www.instagram.com/emsankorusanramtas/" class="p-2 pl-0"><span class="icon-instagram"></span></a>
-<div id="google_translate_element"></div>
+
 
             </div>
+
             <div class="col-6">
 
 
               <div class="d-flex ml-auto">
-
+              <div id="google_translate_element_mobil"></div>
                    <a href="{% url 'mainView' %}" class="d-flex align-items-center">
                   <span class="icon-home"></span>
 
@@ -193,4 +194,11 @@ function googleTranslateElementInit() {
   new google.translate.TranslateElement({pageLanguage: 'tr'}, 'google_translate_element');
 }
 </script>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'tr'}, 'google_translate_element_mobil');
+}
+</script>
+
                   <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
