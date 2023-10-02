@@ -134,11 +134,18 @@
 
 
               <div class="d-flex ml-auto">
-                     <div id="google_translate_element"></div>
-                   <a href="{% url 'mainView' %}" class="d-flex align-items-center ml-auto mr-4">
+
+                   <a href="{% url 'mainView' %}" class="d-flex align-items-center ml-auto">
                   <span class="icon-home"></span>
 
                 </a>
+
+                   <span  class="d-flex align-items-center ml-auto">
+                   <div id="google_translate_element"></div>
+
+                </span>
+
+
                   <a href="https://www.korusan.com.tr/media/upload/musteriform.pdf" class="d-flex align-items-center ml-auto mr-4">
                    <span class="d-none d-md-inline-block">Şikayet Formu</span>
 
@@ -170,6 +177,8 @@
                     <li><a href="{% url 'blogAll' %}">Blog</a></li>
                     <li><a href="#contact-section" >Hakkımızda</a></li>
                     <li><a href="{% url 'allContact' %}">İletişim</a></li>
+                    <li><div id="google_translate_element"></div></li>
+
     </ul>
 
     </div>
