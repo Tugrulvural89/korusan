@@ -726,6 +726,31 @@ h. Vagon ve karavanların duvar, tavan ve yer döşemelerinde,<br>
       </div>
     </div>
 
+   <!-- Anasayfa popup -->
+   <!-- Modal -->
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby  aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Yeni Ürün</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                NEDİR & NASIL ÜRETİLİR? • %100 çam talaşı fırında kurutularak nem oranı düşürülür. • Kurutulan talaş yüksek basınç altında preslenerek Pelet haline getirilir. • Presten çıkan mamule soğutma işlemi uygulanarak paketleme yapılır ve kullanıma hazır hale gelir. • Bu işlemlerin uygulanması sonucunda ağacın yanma ve enerji verimini %300 artırarak doğaya, çevreye ve ülke ekonomisine büyük katkı sağlamaktadır. • Bu oran kullanılacak yakıt miktarının üçte bir oranında düşmesi demektir ki bu da hem ormanlarımızda daha az tahribat hem de ekonomimizde daha az maliyet demektedir...
+                <a href="https://www.korusan.com.tr/urunler/pelet-korusan/">Ürünü Gör</a>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- /.modal-content -->
+
    {% include 'footers.html' %}
 </div>
   </div>
@@ -744,6 +769,12 @@ h. Vagon ve karavanların duvar, tavan ve yer döşemelerinde,<br>
   <script src="{% static 'js/jquery.fancybox.min.js' %}"></script>
   <script src="{% static 'js/main.js' %}"></script>
 
+      <script>
+    $(document).ready(function(){
+    $("#myModal").modal('show');
+});
+
+</script>
   <script>
       /* lazyload.js (c) Lorenzo Giuliani
  * MIT License (http://www.opensource.org/licenses/mit-license.html)
