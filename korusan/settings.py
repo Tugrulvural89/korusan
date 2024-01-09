@@ -19,7 +19,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '@_r1s%$n&7c@+fyif6c^6n%j!dk=9652*#&qw0g-l_#o_cl7hz'
+SECRET_KEY = "0n6I]6a_Q3YYU.lv0glpCPJWy&?#Q'gjyZ,{Dq}{jpz<k{EsFQ"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -27,10 +27,10 @@ DEBUG = True
 ALLOWED_HOSTS = ['127.0.0.1','korusan.com.tr','www.korusan.com.tr',"95.14.78.24"]
 EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
 
-SENDGRID_API_KEY = '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'
+SENDGRID_API_KEY = 'SG.egpPMVWCQDmo_UfJMywZGg.tjJ2cc_KcvTDoLBGamtUoirUlgrn3DvV5HatgTIwBw>
 
 #os.environ.get("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")
-#SENDGRID_API_KEY = os.getenv('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')
+#SENDGRID_API_KEY = os.getenv('SG.egpPMVWCQDmo_UfJMywZGg.tjJ2cc_KcvTDoLBGamtUoirUlgrn3Dv>
 
 
 SENDGRID_SANDBOX_MODE_IN_DEBUG=False
@@ -94,12 +94,13 @@ WSGI_APPLICATION = 'korusan.wsgi.application'
 #database connect
 #./cloud_sql_proxy -instances="total-reef-284308:europe-west4:emsankorusan"=tcp:5432
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'korusan',
-        'USER': 'name',
-        'PASSWORD': 'pass',
+        'USER': 'tugrulvural',
+        'PASSWORD': '8992Te8992?',
         'HOST': '127.0.0.1',
     }
 }
@@ -113,7 +114,7 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidato>
     },
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
@@ -129,6 +130,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
+
 
 LANGUAGE_CODE = 'tr-TR'
 
