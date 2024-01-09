@@ -101,9 +101,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'korusan',
-        'USER': '#',
-        'PASSWORD': '#',
-        'HOST': '#',
+        'USER': os.getenv('DATABASE_NAME'),
+        'PASSWORD': os.getenv('DATABASE_PASSWORD'),
+        'HOST': os.getenv('DATABASE_HOSTNAME'),
 
     }
 }
