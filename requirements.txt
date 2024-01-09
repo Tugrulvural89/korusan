@@ -1,4 +1,4 @@
-asgiref==3.2.10
+asgiref==3.7.2
 brotlipy==0.7.0
 cachetools==4.1.1
 certifi==2020.6.20

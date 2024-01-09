@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -19,24 +23,24 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "0n6I]6a_Q3YYU.lv0glpCPJWy&?#Q'gjyZ,{Dq}{jpz<k{EsFQ"
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','korusan.com.tr','www.korusan.com.tr',"95.14.78.24"]
+ALLOWED_HOSTS = ['127.0.0.1', 'korusan.com.tr', 'www.korusan.com.tr', "95.14.78.24", "localhost"]
 EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
 
-SENDGRID_API_KEY = 'SG.egpPMVWCQDmo_UfJMywZGg.tjJ2cc_KcvTDoLBGamtUoirUlgrn3DvV5HatgTIwBw>
+SENDGRID_API_KEY = os.getenv('SENDGRID_API_KEY')
 
-#os.environ.get("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")
-#SENDGRID_API_KEY = os.getenv('SG.egpPMVWCQDmo_UfJMywZGg.tjJ2cc_KcvTDoLBGamtUoirUlgrn3Dv>
+# os.environ.get("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")
+# SENDGRID_API_KEY = os.getenv('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')
 
 
-SENDGRID_SANDBOX_MODE_IN_DEBUG=False
+SENDGRID_SANDBOX_MODE_IN_DEBUG = False
 
 EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_HOST_USER = 'apikey' # this is exactly the value 'apikey'
+EMAIL_HOST_USER = 'apikey'  # this is exactly the value 'apikey'
 EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
@@ -87,34 +91,29 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'korusan.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-#database connect
-#./cloud_sql_proxy -instances="total-reef-284308:europe-west4:emsankorusan"=tcp:5432
-
+# database connect
+# ./cloud_sql_proxy -instances="total-reef-284308:europe-west4:emsankorusan"=tcp:5432
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'korusan',
-        'USER': 'tugrulvural',
-        'PASSWORD': '8992Te8992?',
-        'HOST': '127.0.0.1',
+        'USER': '#',
+        'PASSWORD': '#',
+        'HOST': '#',
+
     }
 }
-
-
-
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidato>
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
     },
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
@@ -127,10 +126,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
-
 
 LANGUAGE_CODE = 'tr-TR'
 
@@ -142,15 +139,12 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 
-
-
-
 STATIC_URL = '/static/'
+
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
@@ -159,9 +153,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
-
-
-UPLOAD_ROOT = 'media/uploads/'
+UPLOAD_ROOT = '/media/uploads/'
 CKEDITOR_UPLOAD_PATH = UPLOAD_ROOT
 DOWNLOAD_ROOT = os.path.join(BASE_DIR, "/static/media/downloads")
 DOWNLOAD_URL = STATIC_URL + "media/downloads"
