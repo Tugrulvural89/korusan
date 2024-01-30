@@ -626,6 +626,7 @@ h. Vagon ve karavanların duvar, tavan ve yer döşemelerinde,<br>
           </div>
         </div>
         <div class="row mb-5">
+        {{ contents }}
             {% for blog in contents %}
           <div class="col-lg-4 col-md-6 mb-4 mb-lg-0 post-entry">
             <a href="{% url 'blogDetail' slug=blog.slug %}" class="d-block figure">

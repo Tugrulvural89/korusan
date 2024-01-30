@@ -345,3 +345,7 @@ def mainViewThanks(request):
                                             })
 def kvk(request):
     return render(request,'kvk.html',{})
+
+
+def cert_page(request):
+    return render(request,'cert_page.html')
