@@ -1,6 +1,15 @@
 {% load static %}<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
   <head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-590787271"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-590787271');
+</script>
     <title>Korusan Emsan A.Ş ve Ramtaş A.Ş Kereste Üretimi</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -74,11 +83,14 @@
 
               {% if obj.status == True %}
                 <h3 style="color: white;">Kısa bir süre için bakımdayız...<br>
-                    Telefon : <a href="tel:+904447781 ">444 77 81</a><br>
+                    Telefon : <a href="tel:+904447781 " class="phoneinfo">444 77 81</a><br>
                     Email : <a href="mailto:bilgi@korusan.com.tr">bilgi@korusan.com.tr</a></h3>
 
               {% else %}
-                <span class="sub-text mb-3 d-block"><em style="color: white;font-size: larger;">50 YILI AŞKIN TECRÜBE İLE ...</em></span>
+                <span class="sub-text mb-3 d-block">
+                    <em style="color: white;font-size: larger;">50 YILI AŞKIN TECRÜBE İLE ...</em>
+
+                </span>
 
               {% endif %}
           </div>
@@ -715,7 +727,7 @@ h. Vagon ve karavanların duvar, tavan ve yer döşemelerinde,<br>
                 </div>
               </div>
 
-                <a href="tel:+90-444-77-81" class="d-flex align-items-center">
+                <a href="tel:+90-444-77-81" class="d-flex align-items-center phoneinfo">
                   <span class="icon-phone mr-2"></span>
                   <span class="d-md-inline-block"> 444 77 81</span>
                 </a>
@@ -749,6 +761,14 @@ h. Vagon ve karavanların duvar, tavan ve yer döşemelerinde,<br>
         </div>
     </div>
 </div>
+
+
+
+   <a href="tel:4447781" class="phone-icon phoneinfo">
+  <!-- Telefon ikonu için bir görsel veya FontAwesome gibi bir kütüphane kullanabilirsiniz -->
+  <i class="icon-phone"></i>
+</a>
+
 
 <!-- /.modal-content -->
 
@@ -858,6 +878,37 @@ h. Vagon ve karavanların duvar, tavan ve yer döşemelerinde,<br>
 
 }(this);
   </script>
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-590787271/jCW5CPf54JsZEMfl2pkC',
+      'value': 10.0,
+      'currency': 'TRY',
+      'event_callback': callback
+  });
+  return false; // Olayın varsayılan işleyişini durdurur
+}
+
+// DOM yüklendikten sonra çalışacak fonksiyon
+document.addEventListener("DOMContentLoaded", function() {
+  // `phoneinfo` sınıfına sahip tüm bağlantıları seç
+  var phoneLinks = document.querySelectorAll('.phoneinfo');
+
+  // Her bir bağlantı için olay dinleyicisi ekle
+  phoneLinks.forEach(function(phoneLink) {
+    phoneLink.addEventListener('click', function(event) {
+      event.preventDefault(); // Bağlantının varsayılan işlevini engelle
+      var href = this.getAttribute('href'); // Tıklanan bağlantının href değerini al
+      gtag_report_conversion(href); // `gtag_report_conversion` fonksiyonunu çağır
+    });
+  });
+});
+</script>
 
   </body>
 </html>
