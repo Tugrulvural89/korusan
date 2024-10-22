@@ -742,7 +742,7 @@ h. Vagon ve karavanların duvar, tavan ve yer döşemelerinde,<br>
    <!-- Anasayfa popup -->
    <!-- Modal -->
 <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby  aria-labelledby="exampleModalLabel" aria-hidden="true">
+{% comment %}<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby  aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -760,7 +760,7 @@ h. Vagon ve karavanların duvar, tavan ve yer döşemelerinde,<br>
             </div>
         </div>
     </div>
-</div>
+</div>{% endcomment %}
 
 
 
@@ -790,12 +790,12 @@ h. Vagon ve karavanların duvar, tavan ve yer döşemelerinde,<br>
   <script src="{% static 'js/jquery.fancybox.min.js' %}"></script>
   <script src="{% static 'js/main.js' %}"></script>
 
-      <script>
+ {% comment %}     <script>
     $(document).ready(function(){
     $("#myModal").modal('show');
 });
 
-</script>
+</script>{% endcomment %}
   <script>
       /* lazyload.js (c) Lorenzo Giuliani
  * MIT License (http://www.opensource.org/licenses/mit-license.html)
