@@ -56,6 +56,7 @@ urlpatterns = [
     path('iletisim/', views.allContactUs, name='allContactUs'),
     path('thankyou', views.mainViewThanks, name='mainViewThanks'),
     path('sertifikalar/',views.cert_page, name='cert_page'),
+    path('bilgi-guvenligi-politikasi/',views.bgp, name='bgp'),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('sitemap.xml', sitemap,
                        {'sitemaps': {'urunler': GenericSitemap(info_dict, priority=0.6),

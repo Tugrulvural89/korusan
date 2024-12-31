@@ -349,3 +349,7 @@ def kvk(request):
 
 def cert_page(request):
     return render(request,'cert_page.html')
+
+def bgp(request):
+    return render(request,  'bgp.html')
+
